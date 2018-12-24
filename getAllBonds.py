@@ -14,7 +14,7 @@ def lambda_handler(event, context):
     collection_per_page = 10
     page_count = -(-len(lines) // collection_per_page) - 1
 
-    """ Mandatory parameter is the page """
+    """ The Page is the Mandatory parameter """
     if 'page' in event:
         if event['page'].isdigit():
             num_page = int(event['page'])
