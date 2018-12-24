@@ -35,7 +35,7 @@ def lambda_handler(event, context):
         return {
             'statusCode': 403,
             'page' : num_page,
-            'body': "The paremeter 'Page' should not be more than " + str(page_count)
+            'body': "The parameter 'Page' should not be more than " + str(page_count)
         }
 
     try:
