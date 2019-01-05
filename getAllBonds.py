@@ -20,20 +20,20 @@ def lambda_handler(event, context):
             num_page = int(event['page'])
         else:
             return {
-                'statusCode': 403,
+                'statusCode': 415,
                 'page' : -1,
                 'body': "Please, check the parameter 'Number of a page' at the query. It should be an integer"
             }
     else:
         return {
-            'statusCode': 403,
+            'statusCode': 400,
             'page' : -1,
             'body': "Mandatory parameter 'Page' is missing at the query"
         }
 
     if num_page > page_count:
         return {
-            'statusCode': 403,
+            'statusCode': 400,
             'page' : num_page,
             'body': "The parameter 'Page' should not be more than " + str(page_count)
         }
